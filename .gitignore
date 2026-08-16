@@ -6,3 +6,6 @@ artifacts/
 transcript.log
 framework.jsonl
 agent-debug.jsonl
+
+# Kaggle submission working files
+kaggle_kernel/starter/

@@ -1,0 +1,13 @@
+{
+  "id": "sarthaksharma14/agent-security-attack-v1",
+  "title": "agent-security-attack-v1",
+  "code_file": "submit_attack.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "competition_sources": ["ai-agent-security-multi-step-tool-attacks"],
+  "dataset_sources": [],
+  "kernel_sources": []
+}
