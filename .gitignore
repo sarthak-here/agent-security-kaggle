@@ -1,0 +1,8 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+artifacts/
+transcript.log
+framework.jsonl
+agent-debug.jsonl
