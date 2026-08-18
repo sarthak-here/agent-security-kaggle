@@ -30,6 +30,7 @@ corroborated by the public break-60 cluster:
 
 from __future__ import annotations
 
+import os
 import string
 import time
 from typing import Any
@@ -123,6 +124,12 @@ class AttackAlgorithm(AttackAlgorithmBase):
             return _emit(FALLBACK_N)
         budget = float(getattr(config, "time_budget_s", DEFAULT_BUDGET_S) or DEFAULT_BUDGET_S)
         hops = int(getattr(config, "max_tool_hops", 8) or 8)
+        # The local "Save & Run All" commit (not the scored rerun) drives an immune
+        # deterministic target with a ~9000s budget, so an uncapped fill would spin for
+        # hours and never fire. Cap the budget hard when we are NOT in the competition
+        # rerun; the real rerun (KAGGLE_IS_COMPETITION_RERUN set) keeps the full budget.
+        if os.getenv("KAGGLE_IS_COMPETITION_RERUN") is None:
+            budget = min(budget, float(self.config.get("local_budget_s", 40.0)))
         cands = self._fill(env, budget, max(1, min(hops, 8)))
         return cands if cands else _emit(FALLBACK_N)
 
