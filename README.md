@@ -9,6 +9,8 @@ An attack-only solution for Kaggle's **AI Agent Security: Multi-Step Tool Attack
 | v1 | 33.55 | 0.07 | Direct marker exfiltration with multiple prompt framings |
 | v2 | **81.36** | 0.00 | Live validation-fill, model-aware framing, and replay-safe sizing |
 
+**Public leaderboard rank: 2,034 out of 4,187 teams.**
+
 The private score is included for completeness. The competition's hidden evaluation differed sharply from its public environment, which is an important robustness finding rather than something concealed by this repository.
 
 ## How it works
